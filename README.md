@@ -5,6 +5,7 @@ A powerful system that converts natural language requirements into complete, val
 ## What It Does
 
 Input: Plain English description of your application idea
+
 Example: "Build a CRM with login, contacts, dashboard, role-based access, and premium plan with payments"
 
 Output: Complete technical specification including:
@@ -28,6 +29,7 @@ Step 1: Create virtual environment
 python -m venv venv
 
 Windows: venv\Scripts\activate
+
 Mac/Linux: source venv/bin/activate
 
 Step 2: Install dependencies
@@ -64,9 +66,13 @@ The system uses a 5-stage pipeline:
 ## Built With
 
 Python 3.10+ - Backend runtime
+
 Flask - Web framework
+
 JavaScript - Frontend dashboard
+
 HTML/CSS - User interface with dark/light theme
+
 ## License
 
 MIT License
