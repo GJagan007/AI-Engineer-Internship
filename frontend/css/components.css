@@ -1,0 +1,258 @@
+/* ========================================
+   Buttons
+   ======================================== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 20px;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-family);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition);
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn:active {
+    transform: scale(0.96);
+}
+
+.btn-primary {
+    background: var(--primary-gradient);
+    color: white;
+    box-shadow: 0 4px 16px rgba(91, 75, 212, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(91, 75, 212, 0.4);
+}
+
+.btn-primary:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--text-secondary);
+    border: 1.5px solid var(--border-color);
+}
+
+.btn-outline:hover {
+    background: var(--bg-hover);
+    border-color: var(--primary-light);
+    color: var(--primary-light);
+}
+
+.btn-sm {
+    padding: 5px 14px;
+    font-size: 12px;
+}
+
+.btn-icon {
+    font-size: 14px;
+}
+
+/* ========================================
+   Empty State
+   ======================================== */
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: var(--text-muted);
+    text-align: center;
+    gap: 12px;
+}
+
+.empty-icon {
+    font-size: 48px;
+    opacity: 0.5;
+}
+
+.empty-state p {
+    font-size: 15px;
+    max-width: 400px;
+}
+
+/* ========================================
+   Modal
+   ======================================== */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal-content {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    max-width: 600px;
+    width: 90%;
+    max-height: 80vh;
+    overflow: hidden;
+    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--border-color);
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px) scale(0.95); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.modal-header h3 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all var(--transition);
+    line-height: 1;
+}
+
+.modal-close:hover {
+    color: var(--text-primary);
+    transform: rotate(90deg);
+}
+
+.modal-body {
+    padding: 24px;
+    overflow-y: auto;
+}
+
+.modal-body h4 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 16px;
+    margin-bottom: 8px;
+    color: var(--text-primary);
+}
+
+.modal-body h4:first-child {
+    margin-top: 0;
+}
+
+.modal-body ol, .modal-body ul {
+    padding-left: 24px;
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.modal-body li {
+    margin-bottom: 4px;
+}
+
+/* ========================================
+   Spinner
+   ======================================== */
+.spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid var(--border-color);
+    border-top-color: var(--primary-light);
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ========================================
+   JSON Syntax Highlighting
+   ======================================== */
+.json-key {
+    color: #e06b6b;
+}
+
+.json-string {
+    color: #98c379;
+}
+
+.json-number {
+    color: #d19a66;
+}
+
+.json-boolean {
+    color: #56b6c2;
+}
+
+.json-null {
+    color: #c678dd;
+}
+
+/* ========================================
+   Toast Notifications
+   ======================================== */
+.toast-container {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.toast {
+    padding: 16px 24px;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-family);
+    font-size: 14px;
+    font-weight: 500;
+    color: white;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    animation: slideUp 0.3s ease;
+    max-width: 400px;
+}
+
+.toast-success {
+    background: var(--success);
+}
+
+.toast-error {
+    background: var(--error);
+}
+
+.toast-info {
+    background: var(--info);
+}
+
+.toast-warning {
+    background: var(--warning);
+}

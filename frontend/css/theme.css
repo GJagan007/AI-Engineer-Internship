@@ -1,0 +1,156 @@
+/* ========================================
+   Theme Variables
+   ======================================== */
+:root {
+    /* Light Theme (Default) */
+    --bg-primary: #f8f9fc;
+    --bg-secondary: #ffffff;
+    --bg-card: #ffffff;
+    --bg-input: #f1f3f6;
+    --bg-hover: #eef0f4;
+    
+    --text-primary: #1a1a2e;
+    --text-secondary: #4a4a6a;
+    --text-muted: #8888aa;
+    --text-inverse: #ffffff;
+    
+    --border-color: #e2e6ee;
+    --shadow-color: rgba(0, 0, 0, 0.08);
+    --shadow-hover: rgba(0, 0, 0, 0.15);
+    
+    --primary: #5B4BD4;
+    --primary-light: #6C63FF;
+    --primary-dark: #4A3DB5;
+    --primary-gradient: linear-gradient(135deg, #5B4BD4, #6C63FF);
+    
+    --success: #22c55e;
+    --warning: #f59e0b;
+    --error: #ef4444;
+    --info: #3b82f6;
+    
+    --radius: 12px;
+    --radius-sm: 8px;
+    --radius-lg: 16px;
+    
+    --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+    --bg-primary: #0f0f1a;
+    --bg-secondary: #1a1a2e;
+    --bg-card: #1e1e36;
+    --bg-input: #25254a;
+    --bg-hover: #2a2a55;
+    
+    --text-primary: #e8e8f0;
+    --text-secondary: #b0b0d0;
+    --text-muted: #6a6a8a;
+    --text-inverse: #1a1a2e;
+    
+    --border-color: #2a2a55;
+    --shadow-color: rgba(0, 0, 0, 0.4);
+    --shadow-hover: rgba(0, 0, 0, 0.6);
+}
+
+/* ========================================
+   Theme Components
+   ======================================== */
+.theme-toggle {
+    background: var(--bg-input);
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 20px;
+    transition: all var(--transition);
+    color: var(--text-primary);
+}
+
+.theme-toggle:hover {
+    background: var(--bg-hover);
+    transform: rotate(20deg);
+}
+
+/* Status Indicators */
+.status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--text-muted);
+    transition: all var(--transition);
+}
+
+.status-dot.ready {
+    background: var(--text-muted);
+}
+
+.status-dot.compiling {
+    background: var(--warning);
+    animation: pulse-dot 0.8s infinite;
+}
+
+.status-dot.success {
+    background: var(--success);
+}
+
+.status-dot.error {
+    background: var(--error);
+}
+
+@keyframes pulse-dot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+.status-text {
+    font-size: 13px;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+/* Execution Status */
+.execution-status {
+    font-size: 13px;
+    font-weight: 500;
+    padding: 4px 16px;
+    border-radius: 20px;
+    background: var(--bg-input);
+    color: var(--text-muted);
+}
+
+.execution-status.running {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.execution-status.success {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.execution-status.failed {
+    background: #fde8e8;
+    color: #991b1b;
+}
+
+[data-theme="dark"] .execution-status.running {
+    background: #78350f;
+    color: #fcd34d;
+}
+
+[data-theme="dark"] .execution-status.success {
+    background: #064e3b;
+    color: #6ee7b7;
+}
+
+[data-theme="dark"] .execution-status.failed {
+    background: #7f1d1d;
+    color: #fca5a5;
+}
